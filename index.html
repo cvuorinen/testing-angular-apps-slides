@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	<title>Testing Angular Apps</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/sky.css">
+
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="css/custom-styles.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="bg-container"></div>
+
+		<div class="slides">
+			<section data-state="title-bg" class="title-slide">
+				<img src="img/angular.svg" alt="" class="logo">
+				<h2>Testing Angular Apps</h2>
+				<p>
+					by
+					<a href="http://cvuorinen.net">Carl Vuorinen</a> /
+					<a href="http://twitter.com/cvuorinen">@cvuorinen</a>
+				</p>
+			</section>
+
+			<section data-state="ending-bg" class="ending-slide left">
+				<h1>THE END</h1>
+				<br>
+				<h2>Questions?</h2>
+				<br>
+				<h5>
+					<i class="fa fa-lg fa-twitter" style="width:1.5em;"></i>
+					<a href="http://twitter.com/cvuorinen" target="_blank">@cvuorinen</a>
+				</h5>
+			</section>
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script src="lib/js/run_prettify.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			//controls: false,
+			controlsTutorial: false,
+			history: true,
+
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				//{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+
+</html>
