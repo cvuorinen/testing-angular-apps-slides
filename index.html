@@ -2,82 +2,512 @@
 <html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-	<title>Testing Angular Apps</title>
+  <title>Testing Angular Apps</title>
 
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/sky.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/sky.css">
 
-	<!-- Custom styles -->
-	<link rel="stylesheet" href="css/custom-styles.css">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/custom-styles.css">
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
 
-	<!-- Printing and PDF exports -->
-	<script>
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.type = 'text/css';
-		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
-		document.getElementsByTagName('head')[0].appendChild(link);
-	</script>
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
 </head>
 
 <body>
-	<div class="reveal">
-		<div class="bg-container"></div>
+  <div class="reveal">
+    <div class="bg-container"></div>
 
-		<div class="slides">
-			<section data-state="title-bg" class="title-slide">
-				<img src="img/angular.svg" alt="" class="logo">
-				<h2>Testing Angular Apps</h2>
-				<p>
-					by
-					<a href="http://cvuorinen.net">Carl Vuorinen</a> /
-					<a href="http://twitter.com/cvuorinen">@cvuorinen</a>
-				</p>
-			</section>
+    <div class="slides">
+      <section data-state="title-bg no-footer" class="title-slide" data-transition="fade">
+        <img src="img/angular.svg" alt="" class="logo">
+        <h2>Testing Angular Apps</h2>
+        <p>
+          by
+          <a href="http://cvuorinen.net">Carl Vuorinen</a> /
+          <a href="http://twitter.com/cvuorinen">@cvuorinen</a>
+        </p>
+      </section>
 
-			<section data-state="ending-bg" class="ending-slide left">
-				<h1>THE END</h1>
-				<br>
-				<h2>Questions?</h2>
-				<br>
-				<h5>
-					<i class="fa fa-lg fa-twitter" style="width:1.5em;"></i>
-					<a href="http://twitter.com/cvuorinen" target="_blank">@cvuorinen</a>
-				</h5>
-			</section>
-		</div>
-	</div>
+      <section data-state="theme-dark no-footer" data-background="img/cdl-image.png" data-transition="fade">
+        <div style="width:600px; margin: 0 auto;">
+          <a href="https://citydevlabs.fi" target="_blank">
+            <img src="img/cdl-logo.png" alt="" class="pull-left" style="width:200px;margin-top:40px;">
+          </a>
+          <div style="text-align:left;float:right;margin-top:30px;">
+            <h4>Carl Vuorinen</h4>
+            <h5>
+              <i class="fa fa-lg fa-twitter" style="width:1.5em;"></i>
+              <a href="http://twitter.com/cvuorinen" target="_blank">@cvuorinen</a>
+            </h5>
+            <h5>
+              <i class="fa fa-lg fa-github" style="width:1.5em;"></i>
+              <a href="https://github.com/cvuorinen" target="_blank">cvuorinen</a>
+            </h5>
+            <h5>
+              <i class="fa fa-lg fa-rss" style="width:1.5em;"></i>
+              <a href="http://cvuorinen.net" target="_blank">cvuorinen.net</a>
+            </h5>
+          </div>
+          <div style="clear: both;"></div>
+          <br>
+          <p>
+            <a href="https://citydevlabs.fi/rekry" target="_blank">citydevlabs.fi/rekry</a>
+          </p>
+        </div>
+      </section>
 
-	<script src="lib/js/head.min.js"></script>
-	<script src="js/reveal.js"></script>
+      <section>
+        <h2>Story Time</h2>
+      </section>
 
-	<script src="lib/js/run_prettify.js"></script>
+      <section>
+        <h4>The moment you start
+          <br><em>to need</em> automated tests,
+          <br> it’s already
+          <strong>too late</strong>
+        </h4>
+      </section>
 
-	<script>
-		// More info about config & dependencies:
-		// - https://github.com/hakimel/reveal.js#configuration
-		// - https://github.com/hakimel/reveal.js#dependencies
-		Reveal.initialize({
-			//controls: false,
-			controlsTutorial: false,
-			history: true,
+      <section>
+        <h3>Testing Angular</h3>
+        <h4>Angular CLI FTW!</h4>
+        <pre class="bash fragment"><code data-trim>
+ng new my-new-app
+        </code></pre>
+        <pre class="bash fragment"><code data-trim>
+ng generate component my-new-component
+        </code></pre>
+      </section>
 
-			dependencies: [
-				{ src: 'plugin/markdown/marked.js' },
-				{ src: 'plugin/markdown/markdown.js' },
-				{ src: 'plugin/notes/notes.js', async: true },
-				//{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
-			]
-		});
-	</script>
+      <section>
+        <h3>Testing Angular</h3>
+        <ul class="dashed">
+          <li>Unit & integration testing:
+            <ul>
+              <li>Test runner:
+                <strong>Karma</strong>
+              </li>
+              <li>Testing framework:
+                <em>Jasmine</em>
+              </li>
+              <li>Helpers:
+                <em>Angular testing utilities</em>
+              </li>
+            </ul>
+            <br>
+          </li>
+          <li>End-to-End testing:
+            <ul>
+              <li>
+                <strong>Protractor</strong>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Running Karma</h3>
+        <pre class="bash fragment"><code data-trim>
+ng test
+        </code></pre>
+        <br>
+        <h3>Running Protractor</h3>
+        <pre class="bash fragment"><code data-trim>
+ng e2e
+        </code></pre>
+      </section>
+
+      <section>
+        <pre class="prettyprint"><code data-trim class="language-typescript">
+describe('Jasmine test suite', () => {
+  <span class="fragment">beforeEach(() => {
+    // instanciate Subject Under Test
+    // setup dependencies
+  })</span>
+
+  <span class="fragment">it('should test expectation', () => {
+    // execute code that should be tested
+    const result = 1 + 1
+
+    <span class="fragment">// and assert expectation
+    expect(result).toEqual(2)</span>
+  })</span>
+})
+        </code></pre>
+      </section>
+
+      <section data-background="#f3f2ee" data-transition="fade-in none-out">
+        <img src="img/components.png" alt="">
+      </section>
+
+      <section>
+          <pre class="prettyprint"><code data-trim class="language-javascript">describe('My App', () => {
+  let page: AppPage;
+
+  beforeEach(() => {
+    page = new AppPage();
+  });
+
+  it('should display welcome message', () => {
+    page.navigateTo();
+
+    expect(page.getParagraphText()).toEqual('Welcome to my app!');
+  });
+});</code></pre>
+      </section>
+
+      <section data-background="#f3f2ee" data-transition="none-in fade-out">
+        <img src="img/components2.png" alt="">
+      </section>
+
+      <section>
+        <pre class="prettyprint"><code data-trim class="language-javascript">describe('MyComponent', () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture&lt;MyComponent&gt;;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ MyComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(MyComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});</code></pre>
+      </section>
+
+      <section>
+        <pre class="cli"><code data-trim>
+Chrome 64.0.3282 (Linux 0.0.0): Executed 1 of 1 <span class="error">(1 FAILED)</span>
+<span class="error">Chrome 64.0.3282 (Linux 0.0.0) MyComponent should create FAILED</span>
+  Error: StaticInjectorError(DynamicTestModule):
+    StaticInjectorError(Platform: core)[MyComponent -> MyService]:
+      NullInjectorError: No provider for MyService!
+  'another-component' is not a known element:
+    1. If 'another-component' is an Angular component,
+       then verify that it is part of this module.
+  ...
+        </code></pre>
+      </section>
+
+      <section data-transition="fade-out">
+        <pre class="prettyprint"><code data-trim class="language-javascript">
+describe('MyComponent', () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture&lt;MyComponent&gt;;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      <mark>declarations: [ MyComponent, AnotherComponent, ... ],</mark>
+      <mark>imports: [ ReactiveFormsModule ],</mark>
+      <mark>providers: [ MyService ],</mark>
+    })
+    .compileComponents();
+  }));
+
+  ...
+});
+        </code></pre>
+      </section>
+
+      <section data-transition="fade-in">
+        <pre class="prettyprint"><code data-trim class="language-javascript">
+import {AppModule} from './app.module';
+
+describe('MyComponent', () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture&lt;MyComponent&gt;;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      <mark>imports: [ AppModule ],</mark>
+    })
+    .compileComponents();
+  }));
+
+  ...
+});
+        </code></pre>
+      </section>
+
+      <section data-background="#f3f2ee" data-transition="fade">
+        <img src="img/components3.png" alt="">
+      </section>
+
+      <section>
+        <pre class="prettyprint"><code data-trim class="language-javascript">
+describe('MyComponent', () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture&lt;MyComponent&gt;;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      <mark>declarations: [ MyComponent ],</mark>
+      <mark>schemas: [ NO_ERRORS_SCHEMA ],</mark>
+      providers: [ MyService ],
+    })
+    .compileComponents();
+  }));
+
+  ...
+});
+        </code></pre>
+        <div class="fragment callout position-right" data-callout="mark:contains('NO_ERRORS_SCHEMA')" data-callout-offset-left="20">
+          <div class="callout-arrow"></div>
+          <div class="callout-text">Shallow test</div>
+        </div>
+      </section>
+
+      <section data-background="#f3f2ee" data-transition="fade">
+        <img src="img/components4.png" alt="">
+      </section>
+
+      <section>
+        <pre class="prettyprint"><code data-trim class="language-javascript">
+describe('MyComponent', () => {
+  let component: MyComponent;
+  let fixture: ComponentFixture&lt;MyComponent&gt;;
+
+  beforeEach(async(() => {
+    const serviceMock = jasmine.createSpyObj('MyService', ['someAction']);
+
+    TestBed.configureTestingModule({
+      declarations: [ MyComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ],
+      <mark>providers: [ {provide: MyService, useValue: serviceMock } ]</mark>
+    })
+    .compileComponents();
+  }));
+
+  ...
+});
+        </code></pre>
+        <div class="fragment callout position-bottom" data-callout="mark:contains('useValue')" data-callout-offset-left="90">
+          <div class="callout-arrow"></div>
+          <div class="callout-text">Isolate test by providing mock service</div>
+        </div>
+      </section>
+
+      <section data-background="#f3f2ee" data-transition="fade">
+        <img src="img/components2.png" alt="">
+      </section>
+
+      <section data-background="#f3f2ee" data-transition="fade">
+        <img src="img/components6.png" alt="">
+      </section>
+
+      <section>
+        <pre class="prettyprint"><code data-trim class="language-javascript">
+describe('MyComponent', () => {
+  let component: MyComponent;
+  let service: MyService;
+
+  beforeEach(() => {
+    service = jasmine.createSpyObj('MyService', ['someAction']);
+
+    <mark>component = new MyComponent(service);</mark>
+    component.ngOnInit();
+  });
+
+  ...
+});
+        </code></pre>
+        <div class="fragment callout position-right" data-callout="mark:contains('new MyComponent')" data-callout-offset-left="20">
+          <div class="callout-arrow"></div>
+          <div class="callout-text">Component is just
+            <br> regular JS class</div>
+        </div>
+        <div class="fragment callout position-bottom" data-callout="span:contains('ngOnInit')" data-callout-offset-left="-50" data-callout-offset-top="30">
+          <div class="callout-text">* need to call lifecycle hooks manually</div>
+        </div>
+      </section>
+
+      <section data-background="#f3f2ee" data-transition="fade">
+        <img src="img/components7.png" alt="">
+      </section>
+
+
+
+      <section>
+        <h3>Types of Tests</h3>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Unit</th>
+              <th>Integration</th>
+              <th>E2E</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Fast</th>
+              <td>
+                <em>Yes</em>
+              </td>
+              <td>~</td>
+              <td>
+                <strong>No</strong>
+              </td>
+            </tr>
+            <tr>
+              <th>Reliable</th>
+              <td>
+                <em>Usually</em>
+              </td>
+              <td>~</td>
+              <td>
+                <strong>Sometimes</strong>
+              </td>
+            </tr>
+            <tr>
+              <th>Isolate</th>
+              <td>
+                <em>Yes</em>
+              </td>
+              <td>~</td>
+              <td>
+                <strong>No</strong>
+              </td>
+            </tr>
+            <tr>
+              <th>Simulates real use</th>
+              <td>
+                <strong>No</strong>
+              </td>
+              <td>~</td>
+              <td>
+                <em>Yes</em>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Why do you write tests?</h3>
+        <ol>
+          <li class="fragment">Verify correctness</li>
+          <li class="fragment">Prevent regressions</li>
+          <li class="fragment">Support refactoring</li>
+          <li class="fragment">Design aid</li>
+          <li class="fragment">Documentation</li>
+        </ol>
+      </section>
+
+      <section>
+        <h4>Don’t get stuck on testing <strong>dogma</strong></h4>
+        <br>
+        <ul class="dashed">
+          <li><span class="strike">Dogma is inflexible.</span><br><br></li>
+          <li><span class="strike2">Dogma kills creativity.</span></li>
+        </ul>
+        <div class="fragment callout position-bottom" data-fragment-state="strike" data-callout="span:contains('flexible')" data-callout-offset-left="-150" data-callout-offset-top="20">
+          <div class="callout-text">Testing needs flexibility</div>
+        </div>
+        <div class="fragment callout position-bottom" data-fragment-state="strike2" data-callout="span:contains('creativity')" data-callout-offset-left="-150" data-callout-offset-top="20">
+          <div class="callout-text">Testing needs creativity</div>
+        </div>
+      </section>
+
+      <section>
+        <h4>An imperfect test <em>today</em>
+          <br>is better than a perfect test <strong>someday</strong></h4>
+        <br>
+        <ul class="dashed">
+          <li>Perfect is the enemy of good<br><br></li>
+          <li>Write the best test you can <em>today</em></li>
+        </ul>
+      </section>
+
+      <section>
+        <h4>An <em>ugly test</em> is better than <strong>no test</strong></h4>
+        <br>
+        <ul class="dashed">
+          <li>When the code is ugly,
+            the test may be ugly<br><br></li>
+          <li>You don’t like to write ugly tests, but
+            <br><em>ugly code needs testing the most</em></li>
+        </ul>
+      </section>
+
+      <section>
+        <blockquote class="backdrop">The problem with quick and dirty...
+          <br>is that dirty remains long after quick has been forgotten.
+          <cite><b>Steve C McConnell</b></cite>
+        </blockquote>
+      </section>
+
+      <section data-state="ending-bg no-footer" class="ending-slide left">
+        <h1>THE END</h1>
+        <br>
+        <h2>Questions?</h2>
+        <br>
+        <h5>
+          <i class="fa fa-lg fa-twitter" style="width:1.5em;"></i>
+          <a href="http://twitter.com/cvuorinen" target="_blank">@cvuorinen</a>
+        </h5>
+      </section>
+    </div>
+
+    <div class="footer">
+      Testing Angular Apps
+      <img src="img/ngvikings-logo.png" alt="ngVikings 2018">
+      by
+      <a href="http://twitter.com/cvuorinen">@cvuorinen</a>
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script src="lib/js/run_prettify.js"></script>
+  <script src="lib/js/jquery.min.js"></script>
+
+  <script src="js/custom-scripts.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      //controls: false,
+      controlsTutorial: false,
+      history: true,
+      keyboard: { 13: 'next' }, // go to the next slide when the ENTER key is pressed
+
+      dependencies: [
+        //{ src: 'plugin/markdown/marked.js' },
+        //{ src: 'plugin/markdown/markdown.js' },
+        //{ src: 'plugin/notes/notes.js', async: true },
+        //{ src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
 </body>
 
 </html>

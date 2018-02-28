@@ -80,9 +80,11 @@ body {
   text-align: left;
 }
 
-.reveal section img {
+.reveal section img,
+.reveal section img:hover {
   border: none;
   box-shadow: none;
+  background: none;
 }
 
 .reveal section em {
@@ -114,6 +116,14 @@ body {
 
 .reveal ul.small {
   font-size: 70%;
+}
+
+.reveal table td {
+  text-align: center;
+}
+
+.reveal table thead th {
+  text-align: center;
 }
 
 .reveal .backdrop {
@@ -286,6 +296,21 @@ iframe.iframe-container {
   content: "-- ";
 }
 
+.reveal .strike .strike,
+.reveal .strike2 .strike2 {
+  text-decoration: line-through;
+}
+
+.reveal .controls .controls-arrow:before,
+.reveal .controls .controls-arrow:after {
+  width: 2em;
+  height: 0.35em;
+}
+.reveal:not(.has-vertical-slides) .controls .navigate-left,
+.reveal:not(.has-vertical-slides) .controls .navigate-right {
+  bottom: 8px;
+}
+
 /**
  * Callout arrows & highlights
  */
@@ -380,8 +405,8 @@ iframe.iframe-container {
  * Override some code highlight styles
  */
 .reveal pre {
-  /*width: 1000px;
-  margin-left: -20px;*/
+  width: 900px;
+  /*margin-left: -20px;*/
   border-radius: 3px;
   box-shadow: none;
   border: 2px solid #f0f0f0 !important;
@@ -395,6 +420,19 @@ iframe.iframe-container {
   font-family: Consolas, monospace !important;
   color: #333;
 }
+.reveal pre.bash, .reveal pre.cli {
+  background-color: #333;
+  border: 2px solid #555 !important;
+}
+.reveal pre.bash code {
+  color: #17ff0b;
+}
+.reveal pre.cli code {
+  color: #eee;
+}
+.reveal pre code .error {
+  color: #FC507A;
+}
 .reveal section code em {
   color: inherit;
   font-style: normal;
@@ -407,6 +445,10 @@ iframe.iframe-container {
 }
 .reveal pre.pseudo code {
   padding: 15px 20px;
+}
+.reveal .slides section pre code .fragment {
+  opacity: 0.06;
+  visibility: inherit;
 }
 
 /**
@@ -426,6 +468,47 @@ iframe.iframe-container {
   border-radius: 6px;
   line-height: 1.2;
   color: #333;
+}
+
+.reveal .footer {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  right: 100px;
+  font-size: 16px;
+  z-index: 1;
+  opacity: 0.8;
+}
+.no-footer .reveal .footer {
+  display: none;
+}
+
+.reveal .footer h3 {
+  display: inline-block;
+  margin: 0;
+}
+.reveal .footer img {
+  height: 26px;
+  margin-bottom: -8px;
+}
+
+/* Dark theme for slides with dark bg image */
+.theme-dark body {
+  background: #555;
+}
+.theme-dark .reveal h1,
+.theme-dark .reveal h2,
+.theme-dark .reveal h3,
+.theme-dark .reveal h4,
+.theme-dark .reveal h5,
+.theme-dark .reveal h6,
+.theme-dark .reveal p {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(100, 100, 100, 0.2);
+}
+.theme-dark .reveal a {
+  color: #eee;
+  text-shadow: 1px 1px 2px rgba(100, 100, 100, 0.2);
 }
 
 /* PRETTY PRINTING STYLES for prettify.js. */
